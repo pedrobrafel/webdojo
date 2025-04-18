@@ -1,9 +1,7 @@
 describe('Kanban board', () => {
 
     it('Deve mover uma tarefa de ToDo para Done e atualizar o board', () => {
-        cy.start()
-        cy.submitLogin('papito@webdojo.com', 'katana123')
-
+        cy.loginXpress()
         cy.goTo('Kanban', 'Kanban Board')
 
         const dataTransfer = new DataTransfer()// É um objeto que simula a transferência de dados entre elementos

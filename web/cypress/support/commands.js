@@ -25,6 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import 'cypress-real-events'
+import './actions/consultancy.actions'
 
 Cypress.Commands.add('start', () => {
     cy.visit('/')
@@ -49,4 +50,30 @@ Cypress.Commands.add('goTo', (buttonName, pageTitle) => {
     cy.contains('h1', pageTitle)
         .should('be.visible')
 
+})
+
+function getToday() {
+    const today = new Date();
+    const day = String(today.getDate()).padStart(2, '0');
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const year = today.getFullYear();
+
+    return `${day}/${month}/${year}`;
+  }
+
+Cypress.Commands.add('loginXpress', ()=>{
+    // login atraves de injecao de cookie e token 
+    const token = 'e1033d63a53fe66c0fd3451c7fd8f617';
+    const loginDate = getToday();
+
+    // injetar cookie
+    cy.setCookie('login_date', loginDate);
+
+    // url de dentro do sistema
+    cy.visit('/dashboard', {
+        //Mas antes de acessar a pagina, eu vou definir esse token do usuario autenticado
+        onBeforeLoad(win){
+            win.localStorage.setItem('token', token);
+        }
+    })
 })

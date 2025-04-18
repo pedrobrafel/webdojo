@@ -1,8 +1,7 @@
 describe('Simulando Mouseover', () => {
 
     beforeEach(() => {
-        cy.start()
-        cy.submitLogin('papito@webdojo.com', 'katana123')
+        cy.loginXpress()
     });
 
     it('Deve mostrar um texto ao passar o mouse em cima do link instagram - com plugin', () => {

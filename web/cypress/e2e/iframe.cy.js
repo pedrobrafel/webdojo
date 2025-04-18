@@ -1,8 +1,7 @@
 describe('iFrame', () => {
 
     it('Deve poder tocar o video no iframe', () => {
-        cy.start()
-        cy.submitLogin('papito@webdojo.com', 'katana123')
+        cy.loginXpress();
 
         cy.goTo('Video', 'Video')
 

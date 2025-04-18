@@ -1,7 +1,6 @@
 describe('Links abrindo nova guia/aba', () => {
     beforeEach(() => {
-        cy.start();
-        cy.submitLogin('papito@webdojo.com', 'katana123')
+        cy.loginXpress()
     });
 
     it('Validando o atributo do link do Instagram', () => {

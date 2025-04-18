@@ -1,0 +1,46 @@
+{
+    "personal": {
+        "name": "Pedro Felix",
+        "email": "pedro@webdojo.com",
+        "phone": "35991890635",
+        "consultancyType": "Individual",
+        "personType": "cpf",
+        "document": "11168561663",
+        "dicoveryChannels": [
+            "Instagram",
+            "LinkedIn",
+            "Udemy",
+            "YouTube",
+            "Indicação de Amigo"
+        ],
+        "file": "./cypress/fixtures/document.pdf",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "techs": [
+            "Cypress",
+            "Selenium",
+            "WebDriver IO",
+            "Playwright",
+            "Robot Framework"
+        ],
+        "terms": true
+    },
+    "company": {
+        "name": "Pedro Felix",
+        "email": "pedro@webdojo.com",
+        "phone": "35991890635",
+        "consultancyType": "In Company",
+        "personType": "cnpj",
+        "document": "33406513000156",
+        "dicoveryChannels": [
+            "Instagram",
+            "LinkedIn"
+        ],
+        "file": "./cypress/fixtures/document.pdf",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "techs": [
+            "Cypress",
+            "Javascript"
+        ],
+        "terms": true
+    }
+}
