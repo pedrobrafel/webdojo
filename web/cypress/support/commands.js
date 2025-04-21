@@ -53,7 +53,7 @@ Cypress.Commands.add('goTo', (buttonName, pageTitle) => {
 
 })
 
-Cypress.Commands.add('loginXpress', ()=>{
+Cypress.Commands.add('loginXpress', () => {
     // login atraves de injecao de cookie e token 
     const token = 'e1033d63a53fe66c0fd3451c7fd8f617';
     const loginDate = getToday();
@@ -64,8 +64,17 @@ Cypress.Commands.add('loginXpress', ()=>{
     // url de dentro do sistema
     cy.visit('/dashboard', {
         //Mas antes de acessar a pagina, eu vou definir esse token do usuario autenticado
-        onBeforeLoad(win){
+        onBeforeLoad(win) {
             win.localStorage.setItem('token', token);
         }
     })
+})
+
+Cypress.Commands.add('goToSignup', () => {
+    cy.start();
+    
+    cy.get('a[href="/register"]').click();
+
+    cy.contains('h2', 'Crie sua conta')
+        .should('be.visible');
 })
