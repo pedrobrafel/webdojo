@@ -1,19 +1,11 @@
+import { getToday } from "../support/utils";
+
 describe('Login', () => {
   beforeEach(() => {
     cy.start()
   });
 
-  function getToday() {
-    const today = new Date();
-    const day = String(today.getDate()).padStart(2, '0');
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const year = today.getFullYear();
-
-    return `${day}/${month}/${year}`;
-  }
-
-
-  it.only('Deve logar com sucesso', () => {
+  it('Deve logar com sucesso', () => {
     cy.submitLogin('papito@webdojo.com', 'katana123')
 
     cy.get('[data-cy="user-name"]')

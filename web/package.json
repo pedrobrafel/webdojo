@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "serve -s dist -p 3000"
+    "dev": "serve -s dist -p 3000",
+    "e2e:run-chrome": "npx cypress run -b chrome",
+    "e2e:ui": "npx cypress open"
   },
   "dependencies": {
     "cypress-real-events": "^1.14.0",

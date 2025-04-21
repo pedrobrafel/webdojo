@@ -26,6 +26,7 @@
 
 import 'cypress-real-events'
 import './actions/consultancy.actions'
+import { getToday } from './utils'
 
 Cypress.Commands.add('start', () => {
     cy.visit('/')
@@ -51,15 +52,6 @@ Cypress.Commands.add('goTo', (buttonName, pageTitle) => {
         .should('be.visible')
 
 })
-
-function getToday() {
-    const today = new Date();
-    const day = String(today.getDate()).padStart(2, '0');
-    const month = String(today.getMonth() + 1).padStart(2, '0');
-    const year = today.getFullYear();
-
-    return `${day}/${month}/${year}`;
-  }
 
 Cypress.Commands.add('loginXpress', ()=>{
     // login atraves de injecao de cookie e token 
